@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "fe9c2d8f-e788-471e-8988-c2fde3e3d7d9",
+		"name": "Agenda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/setData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Joe\",\n\t\"surnames\": \"Doe\",\n\t\"contact\": [\n\t\t{\n\t\t\t\"contact_type_id\": 1,\n\t\t\t\"value\": \"mail@mail.com\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/agenda/setData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"agenda",
+						"setData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/agenda/getData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"agenda",
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getBy?[:name&:surname&:value]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/agenda/getBy?value=mail@mail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"agenda",
+						"getBy"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "mail@mail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/setPhoto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/Users/braianmellor/Desktop/Perfil.jpg"
+						},
+						{
+							"key": "id",
+							"value": "24",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/agenda/setPhoto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"agenda",
+						"setPhoto"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
